@@ -269,17 +269,20 @@ def main():
             cells = row.find_all("td", recursive=False)
             if len(cells) < 4:
                 continue
-            position = sanitize_string(cells[0].get_text(strip=True))
-            circle_name = sanitize_string(cells[1].get_text(strip=True))
-            pen_name = sanitize_string(cells[2].get_text(strip=True))
-            link_cell = cells[3]
+            position_hall = sanitize_string(cells[0].get_text(strip=True))
+            position_space = sanitize_string(cells[1].get_text(strip=True))
+            circle_name = sanitize_string(cells[2].get_text(strip=True))
+            pen_name = sanitize_string(cells[3].get_text(strip=True))
+            position = f"{position_hall}号館,{position_space}"
 
             if "サークル名" in circle_name or not circle_name:
                 continue
-            link = sanitize_string(link_cell.get_text(strip=True))
-            links = [link] if link and link.startswith("http") else []
-            for a in link_cell.find_all("a", href=True):
-                links.append(remove_wayback_prefix(str(a["href"])))
+            links: list[str] = []
+            for cell in cells:
+                for a in cell.find_all("a", href=True):
+                    url = str(a["href"]).strip()
+                    if url:
+                        links.append(remove_wayback_prefix(url))
             page_circle_count += 1
 
             circles_info.append({
