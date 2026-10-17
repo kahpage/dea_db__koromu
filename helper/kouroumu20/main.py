@@ -267,7 +267,7 @@ def main():
             cells = row.find_all("td", recursive=False)
             if len(cells) < 4:
                 continue
-            position_hall = sanitize_string(cells[1].get_text(strip=True))
+            position_hall = sanitize_string(cells[0].get_text(strip=True))
             position_space = sanitize_string(cells[1].get_text(strip=True))
             circle_name = sanitize_string(cells[2].get_text(strip=True))
             pen_name = sanitize_string(cells[3].get_text(strip=True))
