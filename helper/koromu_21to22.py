@@ -73,11 +73,11 @@ def get_events(disabled_events_local: list[int | str]) -> OrderedDict[int | str,
     events_pre_ordered_dict: list[tuple[int | str, Event]] = []
     thwikicc = "https://thwiki.cc/%E4%B8%9C%E6%96%B9%E7%BA%A2%E6%A5%BC%E6%A2%A6"
 
-    i = 21  # ==== kouroumu21 ====
+    i = 21  # ==== koromu21 ====
     if i not in disabled_events_local:
-        event_name = f"kouroumu{i}"
+        event_name = f"koromu{i}"
         print(f"Processing {event_name} ...")
-        thwikicc_kouroumu21 = "https://thwiki.cc/%E4%B8%9C%E6%96%B9%E7%BA%A2%E6%A5%BC%E6%A2%A6/%E7%AC%AC21%E5%B1%8A%E6%91%8A%E4%BD%8D"
+        thwikicc_koromu21 = "https://thwiki.cc/%E4%B8%9C%E6%96%B9%E7%BA%A2%E6%A5%BC%E6%A2%A6/%E7%AC%AC21%E5%B1%8A%E6%91%8A%E4%BD%8D"
 
         media_ = [
             Medium(
@@ -141,7 +141,7 @@ def get_events(disabled_events_local: list[int | str]) -> OrderedDict[int | str,
                     (ReliabilityTypes.Reliable, OriginTypes.Official),
                 ),
                 Source(
-                    f"Participating circles (2): {thwikicc_kouroumu21}",
+                    f"Participating circles (2): {thwikicc_koromu21}",
                     (ReliabilityTypes.Likely, OriginTypes.External),
                 ),
             ],
@@ -155,11 +155,11 @@ def get_events(disabled_events_local: list[int | str]) -> OrderedDict[int | str,
         event.circles = retrieve_circles(event_name)
         events_pre_ordered_dict.append((i, event))  # Append event
 
-    i = 22  # ==== kouroumu22 ====
+    i = 22  # ==== koromu22 ====
     if i not in disabled_events_local:
-        event_name = f"kouroumu{i}"
+        event_name = f"koromu{i}"
         print(f"Processing {event_name} ...")
-        thwikicc_kouroumu22 = "https://thwiki.cc/%E5%B1%95%E4%BC%9A%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8?e=%E4%B8%9C%E6%96%B9%E7%BA%A2%E6%A5%BC%E6%A2%A6%2322"
+        thwikicc_koromu22 = "https://thwiki.cc/%E5%B1%95%E4%BC%9A%E4%BD%9C%E5%93%81%E5%88%97%E8%A1%A8?e=%E4%B8%9C%E6%96%B9%E7%BA%A2%E6%A5%BC%E6%A2%A6%2322"
 
         media_ = [
             Medium(
@@ -214,7 +214,7 @@ def get_events(disabled_events_local: list[int | str]) -> OrderedDict[int | str,
                     (RT.Reliable, OT.Official),
                 ),
                 Source(
-                    f"Participating circles (2): {thwikicc_kouroumu22}",
+                    f"Participating circles (2): {thwikicc_koromu22}",
                     (ReliabilityTypes.Likely, OriginTypes.External),
                 ),
             ],
@@ -228,9 +228,9 @@ def get_events(disabled_events_local: list[int | str]) -> OrderedDict[int | str,
         event.circles = retrieve_circles(event_name)
         events_pre_ordered_dict.append((i, event))  # Append event
 
-    # i =   # ==== kouroumu ====
+    # i =   # ==== koromu ====
     # if i not in disabled_events_local:
-    #     event_name = f"kouroumu{i}"
+    #     event_name = f"koromu{i}"
     #     print(f"Processing {event_name} ...")
 
     #     media_ = [

@@ -1,3 +1,3 @@
-# dea_db__kouroumu
+# dea_db__koromu
 
-[dea](https://github.com/kahpage/dea) database for the kouroumu event group.
+[dea](https://github.com/kahpage/dea) database for the koromu event group.

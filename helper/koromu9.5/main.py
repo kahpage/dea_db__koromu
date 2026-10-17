@@ -272,6 +272,9 @@ def main():
             position = sanitize_string(cells[0].get_text(strip=True))
             circle_name = sanitize_string(cells[1].get_text(strip=True))
             pen_name = sanitize_string(cells[2].get_text(strip=True))
+            event = sanitize_string(cells[3].get_text(strip=True))
+            if "東方紅楼夢" not in event:
+                continue
 
             if "サークル名" in circle_name or not circle_name:
                 continue
@@ -288,33 +291,6 @@ def main():
                 "links": links,
                 "description": [],
             })
-
-        # Consignment participating circles (委託参加サークル - table 2)
-        if len(tables) > 2:
-            consignment_table = tables[2]
-            for row in consignment_table.find_all("tr"):
-                cells = row.find_all("td", recursive=False)
-                if len(cells) < 3:
-                    continue
-                circle_name = sanitize_string(cells[0].get_text(strip=True))
-                pen_name = sanitize_string(cells[1].get_text(strip=True))
-                link_cell = cells[2]
-
-                if "サークル名" in circle_name or not circle_name:
-                    continue
-                link = sanitize_string(link_cell.get_text(strip=True))
-                links = [link] if link and link.startswith("http") else []
-                for a in link_cell.find_all("a", href=True):
-                    links.append(remove_wayback_prefix(str(a["href"])))
-                page_circle_count += 1
-
-                circles_info.append({
-                    "circle_name": circle_name,
-                    "circle_penname": pen_name,
-                    "position": "委託参加サークル",
-                    "links": links,
-                    "description": [],
-                })
 
         print(f"Found {page_circle_count} circles in official page {page_index + 1}")
 

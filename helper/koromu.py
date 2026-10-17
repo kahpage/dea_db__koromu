@@ -69,14 +69,14 @@ if __name__ == "__main__":
     events: list[Event] = []
     disabled_events: list[int | str] = []
 
-    from kouroumu_01to10 import get_events as get_kouroumu_01_to_10
-    events.extend(get_kouroumu_01_to_10(disabled_events).values())
+    from koromu_01to10 import get_events as get_koromu_01_to_10
+    events.extend(get_koromu_01_to_10(disabled_events).values())
 
-    from kouroumu_11to20 import get_events as get_kouroumu_11_to_20
-    events.extend(get_kouroumu_11_to_20(disabled_events).values())
+    from koromu_11to20 import get_events as get_koromu_11_to_20
+    events.extend(get_koromu_11_to_20(disabled_events).values())
     
-    from kouroumu_21to22 import get_events as get_kouroumu_21_to_22
-    events.extend(get_kouroumu_21_to_22(disabled_events).values())
+    from koromu_21to22 import get_events as get_koromu_21_to_22
+    events.extend(get_koromu_21_to_22(disabled_events).values())
 
     # ==== event group ====
     media = [
@@ -85,7 +85,7 @@ if __name__ == "__main__":
         # Medium("",
         #        [Source("", (RT.Reliable, OT.Official))]),
     ]
-    links = ["http://koromu-toho.com/", "http://karen.saiin.net/~kouroumu-toho/", "https://x.com/koromu_th"]
+    links = ["http://koromu-toho.com/", "http://karen.saiin.net/~koromu-toho/", "https://x.com/koromu_th"]
 
     event_group = EventGroup(
         aliases=["東方紅楼夢", "Touhou Kouroumu", "TK"],
