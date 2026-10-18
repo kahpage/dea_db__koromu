@@ -107,6 +107,30 @@ def get_events(disabled_events_local: list[int | str]) -> OrderedDict[int | str,
                     )
                 ],
             ),
+            Medium(
+                "21_cover.jpg",
+                [
+                    Source(
+                        "https://hamp.ai/event/koromu2025", (RT.Reliable, OT.Official)
+                    )
+                ],
+            ),
+            Medium(
+                "21_square.jpg",
+                [
+                    Source(
+                        "https://hamp.ai/event/koromu2025", (RT.Reliable, OT.Official)
+                    )
+                ],
+            ),
+            Medium(
+                "21_map_with_circles.svg",
+                [
+                    Source(
+                        "https://hamp.ai/event/koromu2025", (RT.Reliable, OT.Official)
+                    )
+                ],
+            ),
             # Medium("", [Source("", (RT.Reliable, OT.Official))]),
             # Medium("", [Source("", (RT.Reliable, OT.Official))]),
         ]
@@ -137,11 +161,15 @@ def get_events(disabled_events_local: list[int | str]) -> OrderedDict[int | str,
                     (ReliabilityTypes.Reliable, OriginTypes.Official),
                 ),
                 Source(
-                    "Participating circles (1): https://web.archive.org/web/20251123144210/https://koromu-toho.com/koromu21/list_cn.html",
+                    "Participating circles: https://hamp.ai/event/koromu2025",
                     (ReliabilityTypes.Reliable, OriginTypes.Official),
                 ),
                 Source(
-                    f"Participating circles (2): {thwikicc_koromu21}",
+                    "Participating circles (alt): https://web.archive.org/web/20251123144210/https://koromu-toho.com/koromu21/list_cn.html",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    f"Participating circles (alt 2): {thwikicc_koromu21}",
                     (ReliabilityTypes.Likely, OriginTypes.External),
                 ),
             ],

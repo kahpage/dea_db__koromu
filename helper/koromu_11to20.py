@@ -797,12 +797,57 @@ def get_events(disabled_events_local: list[int | str]) -> OrderedDict[int | str,
         thwikicc_koromu20 = "https://thwiki.cc/%E4%B8%9C%E6%96%B9%E7%BA%A2%E6%A5%BC%E6%A2%A6/%E7%AC%AC20%E5%B1%8A%E6%91%8A%E4%BD%8D"
 
         media_ = [
-            Medium("20_krm20-catalog.webp",
-                   [Source("https://web.archive.org/web/20240913135816/http://koromu-toho.com/", (ReliabilityTypes.Reliable, OriginTypes.Official))]),
-            Medium("20_admission-1-600x600.png",
-                   [Source("https://web.archive.org/web/20240913135816/http://koromu-toho.com/", (ReliabilityTypes.Reliable, OriginTypes.Official))]),
-            Medium("20_cos-600x600.png",
-                   [Source("https://web.archive.org/web/20240913135816/http://koromu-toho.com/", (ReliabilityTypes.Reliable, OriginTypes.Official))]),
+            Medium(
+                "20_krm20-catalog.webp",
+                [
+                    Source(
+                        "https://web.archive.org/web/20240913135816/http://koromu-toho.com/",
+                        (ReliabilityTypes.Reliable, OriginTypes.Official),
+                    )
+                ],
+            ),
+            Medium(
+                "20_admission-1-600x600.png",
+                [
+                    Source(
+                        "https://web.archive.org/web/20240913135816/http://koromu-toho.com/",
+                        (ReliabilityTypes.Reliable, OriginTypes.Official),
+                    )
+                ],
+            ),
+            Medium(
+                "20_cos-600x600.png",
+                [
+                    Source(
+                        "https://web.archive.org/web/20240913135816/http://koromu-toho.com/",
+                        (ReliabilityTypes.Reliable, OriginTypes.Official),
+                    )
+                ],
+            ),
+            Medium(
+                "20_cover.jpg",
+                [
+                    Source(
+                        "https://hamp.ai/event/koromu2024", (RT.Reliable, OT.Official)
+                    )
+                ],
+            ),
+            Medium(
+                "20_square.jpg",
+                [
+                    Source(
+                        "https://hamp.ai/event/koromu2024", (RT.Reliable, OT.Official)
+                    )
+                ],
+            ),
+            Medium(
+                "20_map_with_circles.svg",
+                [
+                    Source(
+                        "https://hamp.ai/event/koromu2024", (RT.Reliable, OT.Official)
+                    )
+                ],
+            ),
             # Medium("", [Source("", (RT.Reliable, OT.Official))]),
             # Medium("", [Source("", (RT.Reliable, OT.Official))]),
         ]
@@ -828,9 +873,22 @@ def get_events(disabled_events_local: list[int | str]) -> OrderedDict[int | str,
             circles=[],
             media=media_,
             sources=[
-                Source("Date: https://web.archive.org/web/20240829155743/https://koromu-toho.com/", (ReliabilityTypes.Reliable, OriginTypes.Official)),
-                Source("Participating circles (1): https://web.archive.org/web/20240829160550/https://koromu-toho.com/koromu20/list_all.html", (ReliabilityTypes.Reliable, OriginTypes.Official)),
-                Source(f"Participating circles (2): {thwikicc_koromu20}", (ReliabilityTypes.Likely, OriginTypes.External)),
+                Source(
+                    "Date: https://web.archive.org/web/20240829155743/https://koromu-toho.com/",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    "Participating circles: https://hamp.ai/event/koromu2024",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    "Participating circles (alt): https://web.archive.org/web/20240829160550/https://koromu-toho.com/koromu20/list_all.html",
+                    (ReliabilityTypes.Reliable, OriginTypes.Official),
+                ),
+                Source(
+                    f"Participating circles (alt 2): {thwikicc_koromu20}",
+                    (ReliabilityTypes.Likely, OriginTypes.External),
+                ),
             ],
             locations=locations,
             description=None,
@@ -840,7 +898,7 @@ def get_events(disabled_events_local: list[int | str]) -> OrderedDict[int | str,
 
         # Retrieve circles
         event.circles = retrieve_circles(event_name)
-        events_pre_ordered_dict.append((i, event)) # Append event
+        events_pre_ordered_dict.append((i, event))  # Append event
 
     # i =   # ==== koromu ====
     # if i not in disabled_events_local:
