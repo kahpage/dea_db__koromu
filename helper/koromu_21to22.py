@@ -208,6 +208,30 @@ def get_events(disabled_events_local: list[int | str]) -> OrderedDict[int | str,
                     )
                 ],
             ),
+            Medium(
+                "22_cover.jpg",
+                [
+                    Source(
+                        "https://hamp.ai/event/koromu2026", (RT.Reliable, OT.Official)
+                    )
+                ],
+            ),
+            Medium(
+                "22_square.jpg",
+                [
+                    Source(
+                        "https://hamp.ai/event/koromu2026", (RT.Reliable, OT.Official)
+                    )
+                ],
+            ),
+            Medium(
+                "22_map_with_circles.svg",
+                [
+                    Source(
+                        "https://hamp.ai/event/koromu2026", (RT.Reliable, OT.Official)
+                    )
+                ],
+            ),
             # Medium("", [Source("", (RT.Reliable, OT.Official))]),
             # Medium("", [Source("", (RT.Reliable, OT.Official))]),
         ]
@@ -238,11 +262,15 @@ def get_events(disabled_events_local: list[int | str]) -> OrderedDict[int | str,
                     (RT.Reliable, OT.Official),
                 ),
                 Source(
-                    "Participating circles (1): https://web.archive.org/web/20261017110837/https://koromu-toho.com/circles/",
+                    "Participating circles: https://hamp.ai/event/koromu2026",
                     (RT.Reliable, OT.Official),
                 ),
                 Source(
-                    f"Participating circles (2): {thwikicc_koromu22}",
+                    "Participating circles (alt): https://web.archive.org/web/20261017110837/https://koromu-toho.com/circles/",
+                    (RT.Reliable, OT.Official),
+                ),
+                Source(
+                    f"Participating circles (alt 2): {thwikicc_koromu22}",
                     (ReliabilityTypes.Likely, OriginTypes.External),
                 ),
             ],
